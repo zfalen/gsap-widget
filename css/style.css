@@ -137,3 +137,15 @@ text-shadow: rgba(32,32,32,.25) 1px 1px 2px;
   background-color: #aba58d !important;
   color: #fff !important;
 }
+
+.logoText {
+  display: inline-block;
+  margin-right: 5px;
+  font-size: x-small;
+  font-style: italic;
+}
+
+.logo {
+  display: inline-block !important;
+  max-width: 20% !important;
+}
