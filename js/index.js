@@ -20,8 +20,8 @@ $(function() {
 
   // Set some vars for the draggable stuff
   var currentTime = $( "#time" );
-  var ratio = timelineWidth / tl.duration();
-  var relativePosition = tl.duration() * ratio;  // Time in seconds
+  var ratio = timelineWidth / tl.totalDuration();
+  var relativePosition = tl.totalDuration() * ratio;  // Time in seconds
 
   // Update the dragger when the timeline is updated.
   function updateDragger() {
