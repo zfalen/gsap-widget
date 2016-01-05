@@ -62,7 +62,7 @@ body {
   height: 0;
   border-style: solid;
   border-width: 20px 10px 0 10px;
-  border-color: #212121 transparent transparent transparent;
+  border-color: #38322e transparent transparent transparent;
   left: -10px;
 }
 
@@ -82,7 +82,7 @@ body {
   height: 36px;
   top: -1px;
   left: -1px;
-  border-left: solid 2px #212121;
+  border-left: solid 2px #38322e;
 }
 
 .buttons {
