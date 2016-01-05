@@ -51,6 +51,11 @@ $(function() {
    if(e.keyCode == 32){
        // user has pressed space
        toggleControls();
+
+       // restart
+       if (tl.progress() === 1){
+         tl.play(0)
+       }
    }
 });
 
