@@ -32,7 +32,7 @@ $(function() {
   }
 
   /** Create the dragger with the "Draggable" plugin.
-    * The 'bounds' depends o
+    * The 'bounds' depends
     */
   var s = Draggable.create(dr, {
     type: "x",
@@ -45,19 +45,68 @@ $(function() {
       endChecker();
     }
   });
-  // Hotkeys
-  $('body').keyup(function(e){
-   e.preventDefault();
-   if(e.keyCode == 32){
-       // user has pressed space
-       toggleControls();
 
-       // restart
-       if (tl.progress() === 1){
-         tl.play(0)
+
+  // Hotkey control
+  var pressedKeys = [];
+
+  $('body').keydown(function(e){
+    pressedKeys.push(e.keyCode);
+  });
+
+  $('body').keyup(function(e){
+       e.preventDefault();
+       switch (e.keyCode){
+         case 32:
+           // user has pressed space
+           toggleControls();
+
+           // restart
+           if (tl.progress() === 1){
+             tl.play(0)
+           }
+
+           break;
+
+
+         case 39:
+          // shift + arrow right
+           if (pressedKeys.indexOf(16) > -1){
+             if (tl.progress() === 1){
+               tl.seek(0.1);
+             } else {
+               tl.seek(tl.time() + .1);
+             }
+             updateDragger();
+             break;
+           } else {
+             // arrow right
+             if (tl.progress() === 1){
+               tl.seek(0);
+             } else {
+               tl.seek(tl.time() + .01);
+             }
+             updateDragger();
+             break;
+           }
+
+         case 37:
+           // shift + arrow left
+           if (pressedKeys.indexOf(16) > -1){
+             tl.seek(tl.time() - .1);
+             updateDragger();
+             break;
+           } else {
+             // arrow left
+             tl.seek(tl.time() - .01);
+             updateDragger();
+             break;
+           }
+
        }
-   }
-});
+       pressedKeys.splice(pressedKeys.indexOf(e.keyCode), 1);
+  });
+
 
   // Handle the control buttons
   var toggleControls = function (){
