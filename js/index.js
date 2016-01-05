@@ -1,8 +1,8 @@
 /**
  * Simple timeline visualizer for GSAP
  * Made with Draggable.
- * Go check the external JS files.
  */
+
 $(function() {
 
   // Pause the timeline on load
@@ -13,32 +13,29 @@ $(function() {
   var tl = new TimelineMax( {onUpdate:updateDragger, paused:true} );
 
   // Stock the container width.
-  var wi = $("#trackContainer").width();
+  var timelineWidth = $("#trackContainer").width();
 
   // Your timelines stuff here
-  tl.to( ".box", 5, {x: wi - 60, rotation:720, ease:Elastic.easeInOut} );
+  tl.to( ".box", 5, {x: timelineWidth - 60, rotation:720, ease:Elastic.easeInOut} );
 
   // Set some vars for the draggable stuff
-  var ti = $( "#time" );
-  var ratio = wi / tl.duration();
-  var tr = tl.duration() * ratio;  // Time in seconds
-  var dr = $( "#dragger" );
+  var currentTime = $( "#time" );
+  var ratio = timelineWidth / tl.duration();
+  var relativePosition = tl.duration() * ratio;  // Time in seconds
 
   // Update the dragger when the timeline is updated.
   function updateDragger() {
-    TweenLite.set(dr, {x: wi * tl.progress()});
-    ti.html(tl.time().toFixed( 2 ));
+    TweenLite.set($( "#playhead" ), {x: timelineWidth * tl.progress()});
+    currentTime.html(tl.time().toFixed( 2 ));
     endChecker();
   }
 
-  /** Create the dragger with the "Draggable" plugin.
-    * The 'bounds' depends
-    */
-  var s = Draggable.create(dr, {
+  /** Create the dragger with the "Draggable" plugin.**/
+  var playhead = Draggable.create($( "#playhead" ), {
     type: "x",
-    bounds: {minX: 0, maxX: wi},
+    bounds: {minX: 0, maxX: timelineWidth},
     onDrag: function(){
-      tl.progress(this.x / tr).pause();
+      tl.progress(this.x / relativePosition).pause();
       if (!$('#pause').hasClass('focused')){
           $('#pause').addClass('focused')
       }

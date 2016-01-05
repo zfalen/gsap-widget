@@ -49,14 +49,14 @@ body {
   margin-top: 20px;
 }
 
-#dragger {
+#playhead {
   position: absolute;
   width: 10px;
   height: 50px;
   top: -20px;
 }
 
-#dragger div {
+#playhead div {
   position: relative;
   width: 0px;
   height: 0;
@@ -66,7 +66,7 @@ body {
   left: -10px;
 }
 
-#dragger div::before {
+#playhead div::before {
   content: " ";
   position: absolute;
   width: 20px;
@@ -75,7 +75,7 @@ body {
   left: -10px;
 }
 
-#dragger div::after {
+#playhead div::after {
   content: " ";
   position: absolute;
   width: 1px;
