@@ -154,5 +154,6 @@ text-shadow: rgba(32,32,32,.25) 1px 1px 2px;
 
 .logo {
   display: inline-block !important;
-  max-width: 20% !important;
+  max-width: 21% !important;
+  width: 20%;
 }

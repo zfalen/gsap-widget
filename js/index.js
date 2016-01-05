@@ -153,4 +153,13 @@ var endChecker = function(){
   }
 }
 
+$('.logo').hover(
+  function(){
+    TweenMax.to($(this), .26, {scale: '1.1', x: '5px', force3D: true});
+  },
+  function(){
+    TweenMax.to($(this), .26, {scale: 1, x: 0, force3D: true})
+  }
+)
+
 });
