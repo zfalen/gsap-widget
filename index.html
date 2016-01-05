@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html >
+<!-- <!DOCTYPE html>
+<html>
   <head>
     <meta charset="UTF-8">
     <title>GSAP Timeline Widget</title>
-    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
 
 
@@ -14,20 +13,23 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300italic' rel='stylesheet' type='text/css'>
 
 
-        <script src="js/prefixfree.min.js"></script>
 
 
   </head>
 
   <body>
 
-  <!-- BANNER   -->
+  <!- BANNER -->
+
   <div class="container">
     <div class="box"></div>
   </div>
 
   <!-- CONTROLLER -->
-  <div class="container controllerHolder">
+
+  <div id="controller"></div>
+
+  <!-- <div class="container controllerHolder">
     <div class="row">
 
       <div class="col-md-9">
@@ -47,7 +49,6 @@
         <div class="buttons">
           <button id="play"><i class="fa fa-2x fa-play-circle-o"></i></button>
           <button id="pause"><i class="fa fa-2x fa-pause-circle-o"></i></button>
-          <!-- <button id="seek">seek(1.5)</button> -->
         </div>
       </div>
 
@@ -63,14 +64,19 @@
       </div>
 
     </div>
-  </div>
+  </div> -->
 
 <!-- dependencies -->
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>
 
-<script src="js/index.js"></script>
+<!-- REACT STUFF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+
+<!-- <script src="js/index.js"></script> -->
+<script type='text/jsx' src="./controller.js"></script>
 
 
 
