@@ -1,8 +1,5 @@
 A Pen created at CodePen.io. You can find this one at http://codepen.io/Manoz/pen/hJCqd.
 
-A Pen created at CodePen.io. You can find this one at http://codepen.io/Manoz/pen/hJCqd.
-
-
 NEED TO ADD TO WORK:
 
 Add to head -
