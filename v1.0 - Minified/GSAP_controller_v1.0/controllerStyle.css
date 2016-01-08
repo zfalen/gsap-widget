@@ -1,15 +1,8 @@
-body {
-  position: relative;
-  padding: 10px;
-  font-family: Arial,Helvetica,sans-serif;
-  background-color: #fafafa;
-}
-
 .controllerHolder {
     margin-top: 50px;
 }
 
-.container {
+.controllerContainer {
   margin: 0 auto;
   max-width: 800px;
   width: 100%;
@@ -26,7 +19,7 @@ body {
   background-size: cover;
 }
 
-.timeline {
+.controllerTimeline {
   margin: 15px auto 0;
   height: 85px;
   max-width: 800px;
@@ -36,7 +29,7 @@ body {
   border-top-left-radius: 3px;
 }
 
-.timeline p {
+.controllerTimeline p {
   margin: 0;
   padding: 5px 0;
   color: #fff;
@@ -53,14 +46,14 @@ body {
   margin-top: 20px;
 }
 
-#playhead {
+#controllerPlayhead {
   position: absolute;
   width: 10px;
   height: 50px;
   top: -20px;
 }
 
-#playhead div {
+#controllerPlayhead div {
   position: relative;
   width: 0px;
   height: 0;
@@ -70,7 +63,7 @@ body {
   left: -10px;
 }
 
-#playhead div::before {
+#controllerPlayhead div::before {
   content: " ";
   position: absolute;
   width: 20px;
@@ -79,7 +72,7 @@ body {
   left: -10px;
 }
 
-#playhead div::after {
+#controllerPlayhead div::after {
   content: " ";
   position: absolute;
   width: 1px;
@@ -89,13 +82,13 @@ body {
   border-left: solid 2px #38322e;
 }
 
-.buttons {
+.controllerButtons {
   position: relative;
   top: 10px;
   right: 10px;
 }
 
-.buttons button {
+.controllerButtons button {
   display: block;
   width: 60px;
   margin-bottom: 5px;
@@ -112,25 +105,25 @@ body {
   cursor: pointer;
 }
 
-.buttons button:hover,
-.buttons button:focus,
-.buttons button:active {
+.controllerButtons button:hover,
+.controllerButtons button:focus,
+.controllerButtons button:active {
   transition: all .1s ease-in;
 }
 
-.buttons button:hover {
+.controllerButtons button:hover {
   background-color: #7e7a69;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.buttons button:focus {
+.controllerButtons button:focus {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
       outline: none;
       color: #c95e30;
 text-shadow: rgba(32,32,32,.25) 1px 1px 2px;
 }
 
-.buttons button:active {
+.controllerButtons button:active {
   background-color: #38322e;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
 }
@@ -148,7 +141,7 @@ text-shadow: rgba(32,32,32,.25) 1px 1px 2px;
   color: #fff !important;
 }
 
-.logoText {
+.controllerLogoText {
   display: inline-block;
   margin-right: 2px;
   font-family: 'Lato', sans-serif;
@@ -156,7 +149,7 @@ text-shadow: rgba(32,32,32,.25) 1px 1px 2px;
   font-style: italic;
 }
 
-.logo {
+.controllerLogo {
   display: inline-block !important;
   max-width: 21% !important;
   width: 20%;

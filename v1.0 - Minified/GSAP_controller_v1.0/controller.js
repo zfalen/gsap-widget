@@ -7,7 +7,7 @@
 
  // Render the controller to the appropriate div
  $('#GSAPcontroller').append(
-  '<div id="controller" class="container controllerHolder"> <div class="row"> <div class="col-md-9"> <div id="trackContainer" class="timeline"> <p id="time">0.00</p> <div class="dragger-track"> <div id="playhead"> <div></div> </div> </div> </div> </div> <div class="col-md-3"> <div class="buttons"> <button id="play"><i class="fa fa-2x fa-play-circle-o"></i></button> <button id="pause"><i class="fa fa-2x fa-pause-circle-o"></i></button> <!-- <button id="seek">seek(1.5)</button> --> </div> </div> </div> <div class="row"> <div class="center-block" style="margin-top: 5px; text-align: right; padding-right: 225px;"> <p class="logoText"> a widget by </p> <a href="http://www.partnerscreative.com"> <img src="./GSAP_controller_v1.0/par_logo.svg" class="img-responsive logo"> </a> </div> </div> </div>'
+  '<div id="controller" class="controllerContainer controllerHolder"> <div class="row"> <div class="col-md-9"> <div id="trackContainer" class="controllerTimeline"> <p id="controllerTime">0.00</p> <div class="dragger-track"> <div id="controllerPlayhead"> <div></div> </div> </div> </div> </div> <div class="col-md-3"> <div class="controllerButtons"> <button id="play"><i class="fa fa-2x fa-play-circle-o"></i></button> <button id="pause"><i class="fa fa-2x fa-pause-circle-o"></i></button> </div> </div> </div> <div class="row"> <div class="center-block" style="margin-top: 5px; text-align: right; padding-right: 225px;"> <p class="controllerLogoText"> a widget by </p> <a href="http://www.partnerscreative.com"> <img src="./GSAP_controller_v1.0/par_logo.svg" class="img-responsive controllerLogo"> </a> </div> </div> </div>'
    )
 
  // Pause the timeline on load
@@ -18,8 +18,8 @@
 
  // Make updateDragger function accessible outside of this file (for master timeline onUpdate)
  function updateDragger(tl) {
-           TweenMax.set($( "#playhead" ), {x: timelineWidth * tl.progress()});
-           $('#time').html(tl.time().toFixed( 2 ));
+           TweenMax.set($( "#controllerPlayhead" ), {x: timelineWidth * tl.progress()});
+           $('#controllerTime').html(tl.time().toFixed( 2 ));
            if (tl.progress() === 1){
              tl.pause();
              $('#pause').removeClass('unfocused');
@@ -37,16 +37,16 @@
         var tl = masterTimeline;
 
         // Set some vars for the draggable stuff
-        var currentTime = $( "#time" );
+        var currentTime = $( "#controllerTime" );
         var ratio = timelineWidth / tl.totalDuration();
         var relativePosition = tl.totalDuration() * ratio;  // Time in seconds
 
 
         // Update the dragger when the timeline is updated.
         function updateDragger() {
-          TweenLite.set($( "#playhead" ), {x: timelineWidth * tl.progress()});
+          TweenLite.set($( "#controllerPlayhead" ), {x: timelineWidth * tl.progress()});
           console.log('tl.progress()')
-          $('#time').html(tl.time().toFixed( 2 ));
+          $('#controllerTime').html(tl.time().toFixed( 2 ));
           endChecker();
         }
 
@@ -63,7 +63,7 @@
         }
 
         // Create the dragger with the "Draggable" plugin
-        var playhead = Draggable.create($( "#playhead" ), {
+        var playhead = Draggable.create($( "#controllerPlayhead" ), {
           type: "x",
           bounds: {minX: 0, maxX: timelineWidth},
           onDrag: function(){
@@ -170,7 +170,7 @@
           toggleControls();
         });
 
-      $('.logo').hover(
+      $('.controllerLogo').hover(
         function(){
           TweenMax.to($(this), .26, {scale: '1.1', x: '5px', force3D: true});
         },
