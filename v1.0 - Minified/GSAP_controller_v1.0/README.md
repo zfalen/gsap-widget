@@ -1,19 +1,16 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/Manoz/pen/hJCqd.
 
 NEED TO ADD TO WORK:
 
-Add to head -
+Add to TOP OF head (to prevent Bootstrap’s native styles from overriding yours) -
 
-    <!-- WIDGET STUFF -->
+    <!-- CONTROLLER STYLES -->
     <link rel="stylesheet" href="./GSAP_controller_v1.0/controllerStyle.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:300italic' rel='stylesheet' type='text/css'>
+    <!-- END CONTROLLER STYLES -->
 
 
-Add to body -
+Add to BOTTOM OF body, OUTSIDE of the animation's outermost div and ABOVE your animation script (to position the timeline correctly) -
 
-    <!-- THE CONTROLLER -->
+    <!-- THE CONTROLLER RENDERS HERE -->
     <div id="GSAPcontroller"></div>
 
     <!-- CONTROLLER DEPENDENCIES -->
@@ -22,15 +19,21 @@ Add to body -
     <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>
 
     <script src="./GSAP_controller_v1.0/controller.js"></script>
+    <!-- END CONTROLLER DEPENDENCIES -->
 
 
 
-Add to master timeline's TimelineMax options -
+Add to any existing master timeline's TimelineMax options -
 
     onUpdate: updateDragger, onUpdateParams: ['{self}'], paused: true
+
+    ex.
+    // CREATE A MASTER TIMELINE AND ADD THE CONTROLLER PARAMS
+    var tl = new TimelineMax({onUpdate: updateDragger, onUpdateParams: ['{self}'], paused: true});
 
 
 
 Call at the end of your script and pass in the master timeline -
 
+    // RENDER CONTROLLER AND PASS IN THE MASTER TIMELINE
     timelineSetup(tl);

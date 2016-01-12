@@ -1,3 +1,7 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:300italic');
+
 .controllerHolder {
     margin-top: 50px;
 }
@@ -91,6 +95,7 @@
 .controllerButtons button {
   display: block;
   width: 60px;
+  margin-left: 0px;
   margin-bottom: 5px;
   padding: 6px 0;
   border: none;

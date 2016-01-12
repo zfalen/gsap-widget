@@ -5,6 +5,10 @@
 
  **/
 
+
+ // Append controller dependencies to the end of the body
+ $('#GSAPcontrollerDependencies').after(" <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script> <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>");
+
  // Render the controller to the appropriate div
  $('#GSAPcontroller').append(
   '<div id="controller" class="controllerContainer controllerHolder"> <div class="row"> <div class="col-md-9"> <div id="trackContainer" class="controllerTimeline"> <p id="controllerTime">0.00</p> <div class="dragger-track"> <div id="controllerPlayhead"> <div></div> </div> </div> </div> </div> <div class="col-md-3"> <div class="controllerButtons"> <button id="play"><i class="fa fa-2x fa-play-circle-o"></i></button> <button id="pause"><i class="fa fa-2x fa-pause-circle-o"></i></button> </div> </div> </div> <div class="row"> <div class="center-block" style="margin-top: 5px; text-align: right; padding-right: 225px;"> <p class="controllerLogoText"> a widget by </p> <a href="http://www.partnerscreative.com"> <img src="./GSAP_controller_v1.0/par_logo.svg" class="img-responsive controllerLogo"> </a> </div> </div> </div>'
