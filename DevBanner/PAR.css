@@ -1,0 +1,28 @@
+#PAR-branding {
+  background-image: url("./GSAP_controller_v1.1/par_logo.svg");
+  background-position: 5px 10px;
+  background-repeat: no-repeat;
+  background-size: 92%;
+  width: 100%;
+  height: 100%;
+  font-size: 11px;
+}
+
+#PAR-branding div {
+  position: relative;
+  top: 45px;
+  left: 170px;
+}
+
+#PAR-branding img {
+  margin-left: 5px;
+  width: 25%
+}
+
+.sizmekLabel {
+    color: #0D2A4D;
+    position: absolute;
+    margin-left: 10px;
+    top: 85px;
+    font-size: 14px;
+}

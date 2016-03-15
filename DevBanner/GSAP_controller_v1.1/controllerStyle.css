@@ -1,0 +1,197 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:300italic');
+
+.controllerHolder {
+    margin-top: 50px;
+}
+
+.controllerContainer {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+.box {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background: url("http://mwanoz.fr/gsap/cookie.png") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.controllerTimeline {
+  margin: 15px auto 0;
+  height: 85px;
+  max-width: 800px;
+  background-color: rgba(255, 134, 85, 0.6);
+  box-shadow: 1.5px 1.5px 4px rgba(32, 32, 32, .35);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.controllerTimeline p {
+  margin: 0;
+  padding: 5px 0;
+  color: #fff;
+  background-color: #cb5728;
+  text-align: center;
+  box-shadow: 0px 1px 1px rgba(32, 32, 32, 0.65);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.dragger-track {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#controllerPlayhead {
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  top: -20px;
+}
+
+#controllerPlayhead div {
+  position: relative;
+  width: 0px;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 10px 0 10px;
+  border-color: #38322e transparent transparent transparent;
+  left: -10px;
+}
+
+#controllerPlayhead div::before {
+  content: " ";
+  position: absolute;
+  width: 20px;
+  height: 50px;
+  top: -20px;
+  left: -10px;
+}
+
+#controllerPlayhead div::after {
+  content: " ";
+  position: absolute;
+  width: 1px;
+  height: 36px;
+  top: -1px;
+  left: -1px;
+  border-left: solid 2px #38322e;
+}
+
+.controllerButtons {
+  position: relative;
+  top: 10px;
+  right: 10px;
+}
+
+.controllerButtons button {
+  display: block;
+  width: 60px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+  padding: 6px 0;
+  border: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font: inherit;
+  font-size: 16px;
+  color: #fff;
+  background-color: #aba58d;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all .1s ease-in;
+  cursor: pointer;
+}
+
+.controllerButtons button:hover,
+.controllerButtons button:focus,
+.controllerButtons button:active {
+  transition: all .1s ease-in;
+}
+
+.controllerButtons button:hover {
+  background-color: #7e7a69;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.controllerButtons button:focus {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+      outline: none;
+      color: #c95e30;
+text-shadow: rgba(32,32,32,.25) 1px 1px 2px;
+}
+
+.controllerButtons button:active {
+  background-color: #38322e;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
+}
+
+.focused {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3) !important;
+  outline: none !important;
+  color: #c95e30 !important;
+  background-color: #38322e !important;
+  text-shadow: rgba(32,32,32,.25) 1px 1px 2px !important;
+}
+
+.unfocused {
+  background-color: #aba58d !important;
+  color: #fff !important;
+}
+
+.controllerLogoText {
+  display: inline-block;
+  margin-right: 2px;
+  font-family: 'Lato', sans-serif;
+  font-size: x-small;
+  font-style: italic;
+}
+
+.controllerLogo {
+  display: inline-block !important;
+  max-width: 21% !important;
+  width: 20%;
+}
+
+
+
+/*Bootstrap imitators for widget*/
+.row {
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.col-md-9, .col-md-3 {
+  position: relative;
+  min-height: 1px;
+  padding-right: .9375rem;
+  padding-left: .9375rem;
+}
+
+.col-md-9 {
+    width: 86%;
+    float: left;
+}
+
+.col-md-3 {
+    width: 5%;
+    float: left;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
