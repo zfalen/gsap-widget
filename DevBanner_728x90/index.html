@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CLIENT JOB NUMBER: 728x90</title>
+
+    <!-- CONTROLLER STYLES -->
+    <link rel="stylesheet" href="./GSAP_controller_v1.1/controllerStyle.css">
+    <!-- END CONTROLLER STYLES -->
+
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="scripts/EBLoader.js"></script>
+    <script src="scripts/script.js"></script>
+</head>
+
+<body>
+    <div id="ad">
+        <div id="banner">
+
+          <!-- PARTNERS BRANDING -->
+            <div id="PAR-branding">
+              <div>
+                <i>for</i><img src="./img/logo.png"></img>
+              </div>
+            </div>
+
+            <div class="sizmekLabel"><strong>HTML5 Standard Banner:</strong> 728x90</div>
+            <div class="buttonContainer">
+                <button id="clickthrough-button" class="button clickthrough">ClickThrough</button>
+            </div>
+          <!-- END PARTNERS BRANDING -->
+
+        </div>
+    </div>
+
+    <!-- THE CONTROLLER RENDERS HERE -->
+    <div id="GSAPcontroller"></div>
+
+    <!-- CONTROLLER DEPENDENCIES -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>
+
+    <script src="./GSAP_controller_v1.1/controller.js"></script>
+    <!-- END CONTROLLER DEPENDENCIES -->
+
+    <script>
+
+    // CREATE A MASTER TIMELINE AND ADD THE CONTROLLER PARAMS
+    var tl = new TimelineMax({onUpdate: updateDragger, onUpdateParams: ['{self}'], paused: true});
+
+    // Timeline animations go here
+    // ex. for controller demo:
+    TweenMax.to( "#clickthrough-button", 0, {x: 150} );
+    tl.to( "#clickthrough-button", 3, {x:0, ease:Elastic.easeOut} );
+
+
+    // HANDLE MOUSE HOVER
+
+    $('#ad').hover(function(){
+        // DO SOMETHING ON MOUSE OVER
+    }, function(){
+        // DO SOMETHING ON MOUSE OUT
+    });
+
+    // TEMP HANDLE CLICKTHRU
+    $('#ad').click(function(){window.location.href = '#'})
+
+
+
+    // RENDER CONTROLLER AND PASS IN THE MASTER TIMELINE
+    timelineSetup(tl);
+
+    </script>
+</body>
+
+</html>
